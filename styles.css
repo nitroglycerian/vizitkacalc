@@ -1,0 +1,72 @@
+body {
+    width: 50%;
+    min-height: 125vh;
+    margin: 0;
+    --d: calc(300vw / 75); /* диаметр */
+    --b: 1px;              /* размытие|сглаживание */
+    --c1: skyblue;       /* Цвет 1 */
+    --c2: rgb(112, 172, 195);         /* Цвет 2 */
+    background: 
+      radial-gradient(circle at 50% var(--d),
+        var(--c1) calc(var(--d) /1 ),
+        transparent calc(var(--d) / 5 + var(--b))) repeat-x left center / var(--d) var(--d),
+      linear-gradient(to bottom, 
+        var(--c1), var(--c2)) no-repeat center bottom / 100% calc(50% - var(--d) / 2);
+    background-color: rgb(255, 255, 255);
+  }
+    
+    input {
+    padding: 10px;
+    margin: 15px;
+    width: 200px;
+    }
+    
+    #operator_btns {
+    margin: 10px;
+    }
+    
+    button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: red;
+    cursor: pointer;
+    border-radius: 90px;
+    }
+    
+    button:hover {
+    background-color: #45a049;
+    }
+    
+    p {
+    margin: 10px;
+    font-size: 40px;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        75% {
+            background-position: 50% 50%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+    .ground {
+        height: 50vh;
+        width: 75%;
+        box-sizing: border-box;
+        border-top: 10px solid transparent;
+        background-image: linear-gradient(lightblue, rgb(9, 11, 12)), linear-gradient(to bottom right, transparent 50.5%, lightblue 50.5%), linear-gradient(to bottom left, transparent 50.5%, lightblue 50.5%), linear-gradient(to top right, transparent 50.5%, skyblue 50.5%), linear-gradient(to top left, transparent 50.5%, skyblue 50.5%);
+        background-repeat: repeat, repeat-x, repeat-x, repeat-x, repeat-x;
+        background-position: 0 0, 10px 0, 10px 0, 10px 100%, 10px 100%;
+        background-size: auto auto, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+        background-clip: padding-box, border-box, border-box, border-box, border-box;
+        background-origin: padding-box, border-box, border-box, border-box, border-box;
+      }

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Калькулятор</title>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>обо мне         Достижения         КАЛЬКУЛЯТОР</h1>
+
+<!-- поле ввода первого числа -->
+<input id="num1" />
+
+<!--Б блок с кнопками -->
+<div id="operator_btns">
+<button id="plus" onclick="op='+'">+</button>
+<button id="minus" onclick="op='-'">-</button>
+<button id="times" onclick="op='*'">x</button>
+<button id="divide" onclick="op='/'">:</button>
+</div>
+
+<!-- поле ввода второго числа -->
+<input id="num2" />
+<br>
+
+<!-- кнопка для расчётов -->
+<button onclick="func()">Посчитать</button>
+<button onclick="jmat()">Нажать</button>
+
+<!-- здесь будет результат -->
+<p id="result"></p>
+<p class = normal id="score"></p>
+
+
+<!-- Калькулятор года -->
+<br>
+<h2>Калькулятор года</h2>
+<input id="год" type="number" placeholder="Введите год">
+<input id="число" type="number" placeholder="Введите число">
+<button onclick="годfunc()">Вычислить</button>
+<p id="годresult"></p>
+<img src="карась.png" align=”middle”>
+<!-- наш скрипт -->
+<script>
+// переменная, в которой хранится выбранное математическое действие
+var op;
+
+// переменная для подсчёта количества нажатий
+var kolvo = 0;
+
+function jmat() {
+kolvo = kolvo + 1;
+
+document.getElementById("score").innerHTML = kolvo + " нажатий";
+}
+
+// функция расчёта
+function func() {
+var result;
+var num1 = Number(document.getElementById("num1").value);
+var num2 = Number(document.getElementById("num2").value);
+switch (op) {
+case '+':
+result = num1 + num2;
+break;
+case '-':
+result = num1 - num2;
+break;
+case '*':
+result = num1 * num2;
+break;
+case '/':
+result = num1 / num2;
+break;
+}
+document.getElementById("result").innerHTML = result;
+}
+
+// функция расчета года
+function годfunc() {
+  var год = Number(document.getElementById("год").value);
+  var число = Number(document.getElementById("число").value);
+  var годresult = год + число;
+  document.getElementById("годresult").innerHTML = годresult;
+}
+</script>
+
+
+</body>
+</html>
